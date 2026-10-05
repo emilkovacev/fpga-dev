@@ -106,6 +106,11 @@ SoCs typically refer to ASICs (ASIC-based SoC) or FPGAs (FPGA-based SoC).
 
 ## G
 
+### GPIO
+
+GeneralPurpose Input Output. A pin used for interacting with peripherals. See
+[Pin](./glossary.md#pin).
+
 ## H
 
 ### HDL
@@ -170,7 +175,11 @@ a circuit.
 
 ### Pin
 
+A baremetal connection that allows devices (like FPGAs) to interact with
+peripherals. For example, a GPIO pin on an FPGA can connect to an LED, allowing
+the FPGA to control the LED.
 
+https://ece353.engr.wisc.edu/gpio-pins/gpio-pins/
 
 ### PL
 
