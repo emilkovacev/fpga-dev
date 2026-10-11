@@ -12,8 +12,10 @@ site_author = "Emil Kovacev"
 
 nav = [
   { "Home" = "index.md" },
+  { "Quickstart" = "quickstart.md" },
   { "Circuit Design" = "circuit_design.md" },
   { "Application Development" = "application_development.md" },
+  { "Create a Gate in Verilog" = "verilog_and_gate.md" },
   { "Glossary" = "glossary.md" }
 ]
 
