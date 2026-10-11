@@ -218,9 +218,24 @@ https://nandland.com/lesson-6-synthesizable-vs-non-synthesizable-code/
 
 ## T
 
+### Testbench
+
+Software used to simulate and test HDL designs for FPGAs or ASICs. A testbench
+can simulate clocks, peripherals, etc. so that you can see how your HDL 
+interacts with them.
+
 ## U
 
 ## V
+
+### Verilator
+
+A Verilog/SystemVerilog compiler/simulator. Translates Verilog into C++ that can be 
+executed.
+
+https://verilator.org/guide/latest/overview.html
+
+https://www.itsembedded.com/dhd/verilator_1/
 
 ## W
 
