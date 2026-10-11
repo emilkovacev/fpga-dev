@@ -1,0 +1,26 @@
+top := "top.v"
+top_no_ext := file_stem(top)
+top_vcd := top_no_ext + ".vcd"
+top_gtkw := top_no_ext + ".gtkw"
+main := "sim_main.cpp"
+
+all: clean build run visualize
+
+build:
+	#!/usr/bin/env bash
+	verilator -cc --exe --trace-vcd --assert --build {{top}} {{main}}
+
+run:
+	#!/usr/bin/env bash
+	./obj_dir/V{{top_no_ext}}
+
+visualize:
+	#!/usr/bin/env bash
+	if [ -s "{{top_vcd}}" ]; then
+		gtkwave -o {{top_vcd}} {{top_gtkw}}
+	else
+		echo "{{top_vcd}} is empty, please retry"
+	fi
+
+clean:
+	rm -rf obj_dir "{{top_vcd}}" "{{top_gtkw}}"
