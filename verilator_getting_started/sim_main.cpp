@@ -5,18 +5,21 @@
 // SPDX-License-Identifier: CC0-1.0
 //======================================================================
 
+#include <memory>
 #include <verilated.h>
 #include "Vtop.h"
 
 int main(int argc, char** argv) {
-    VerilatedContext* const contextp = new VerilatedContext;
+
+    const std::unique_ptr<VerilatedContext> contextp{new VerilatedContext};
+
+    contextp->debug(0);
     contextp->traceEverOn(true);
     contextp->randReset(2);
     contextp->threads(1);
     contextp->commandArgs(argc, argv);
 
-    // Construct the Verilated model, from Vtop.h generated from Verilating "top.v"
-    Vtop* const top = new Vtop{contextp};
+    const std::unique_ptr<Vtop> top{new Vtop{contextp.get(), "TOP"}};
 
     top->clk = 0;
     top->reset_l = !0;
@@ -40,12 +43,12 @@ int main(int argc, char** argv) {
 
         // Evaluate model
         top->eval();
-
-        contextp->statsPrintSummary();
     }
 
     // Final model cleanup
     top->final();
+
+    contextp->statsPrintSummary();
 
     // Return good completion status
     return 0;
