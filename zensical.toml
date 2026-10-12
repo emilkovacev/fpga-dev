@@ -16,7 +16,8 @@ nav = [
   { "Circuit Design" = "circuit_design.md" },
   { "Application Development" = "application_development.md" },
   { "Create a Gate in Verilog" = "verilog_and_gate.md" },
-  { "Glossary" = "glossary.md" }
+  { "Glossary" = "glossary.md" },
+  { "FAQ" = "FAQ.md" }
 ]
 
 [project.theme]
