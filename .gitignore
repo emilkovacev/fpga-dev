@@ -1,1 +1,5 @@
-my_first_project/
+**/obj_dir/**
+**/*.vcd
+**/*.fst
+site
+.nvim
